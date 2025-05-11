@@ -1,6 +1,6 @@
-/* src/components/LoadingScreen.css */
+/* src/components/LoadingScreen.css - Fixed for Mobile */
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
 
 .loading-screen {
   position: fixed;
@@ -32,6 +32,9 @@
   white-space: nowrap;
   animation: scroll 60s linear infinite;
   opacity: 0.7;
+  /* Ensure consistent font rendering */
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
 }
 
 .binary-row:nth-child(odd) {
@@ -82,6 +85,8 @@
   color: #8f8;
   font-size: 0.875rem;
   text-align: center;
+  /* Fix font rendering */
+  -webkit-font-smoothing: antialiased;
 }
 
 .loading-terminal {
@@ -92,6 +97,8 @@
   padding: 0.5rem;
   border: 1px solid #0a0;
   border-radius: 0.25rem;
+  /* Fix iOS scrolling issues */
+  -webkit-overflow-scrolling: touch;
 }
 
 .terminal-text {
@@ -102,6 +109,13 @@
   white-space: pre-wrap;
   word-break: break-word;
   overflow-wrap: break-word;
+  /* Force GPU acceleration for better text rendering */
+  transform: translateZ(0);
+  /* Improve font rendering consistency */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  /* Ensure consistent letter spacing */
+  letter-spacing: normal;
 }
 
 .cursor-blink {
@@ -115,6 +129,8 @@
   color: #8ff;
   line-height: 1.4;
   animation: fadeInOut 4s infinite;
+  /* Improve text rendering */
+  -webkit-font-smoothing: antialiased;
 }
 
 @keyframes fadeInOut {
@@ -166,6 +182,8 @@
   justify-content: space-between;
   font-size: 0.75rem;
   color: #8f8;
+  /* Fix font rendering */
+  -webkit-font-smoothing: antialiased;
 }
 
 .loading-footer {
@@ -175,6 +193,8 @@
   animation: pulse 2s infinite;
   text-align: center;
   padding: 0 1rem;
+  /* Fix font rendering */
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Fade out on complete */
@@ -199,6 +219,10 @@
   .terminal-text {
     font-size: 0.7rem;
     line-height: 1.2;
+    /* Mobile-specific text adjustments */
+    letter-spacing: 0;
+    /* Ensure text rendering consistency on mobile */
+    font-weight: 500;
   }
 
   .loading-header,
@@ -211,6 +235,24 @@
   .engagement-message {
     padding: 0 0.5rem;
     line-height: 1.3;
+  }
+  
+  /* Fix for iOS Safari text rendering issues */
+  * {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* iPhone-specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .terminal-text {
+    /* Adjust for iPhone display */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    /* Fix character spacing issues */
+    word-spacing: normal;
+    /* Force GPU acceleration */
+    will-change: transform;
   }
 }
 
