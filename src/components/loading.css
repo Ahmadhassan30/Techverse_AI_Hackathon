@@ -1,0 +1,114 @@
+/* src/components/LoadingScreen.css */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
+
+.binary-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.binary-row {
+  color: #0f0;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.loading-container {
+  width: 100%;
+  max-width: 28rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #0f0;
+  box-shadow: 0 0 1.5rem rgba(0, 255, 0, 0.2);
+  border-radius: 0.25rem;
+  color: #0f0;
+  position: relative;
+}
+
+.loading-header {
+  margin-bottom: 0.5rem;
+  color: #8f8;
+  font-size: 0.875rem;
+}
+
+.loading-terminal {
+  height: 10rem;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  background-color: black;
+  padding: 0.5rem;
+  border: 1px solid #0a0;
+  border-radius: 0.25rem;
+}
+
+.terminal-text {
+  color: #0f0;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: #222;
+  border-radius: 9999px;
+  height: 0.625rem;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar-fill {
+  background-color: #0f0;
+  height: 0.625rem;
+  border-radius: 9999px;
+  transition: width 0.3s ease-out;
+  box-shadow: 0 0 0.5rem rgba(0, 255, 0, 0.5);
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #8f8;
+}
+
+.loading-footer {
+  margin-top: 1.5rem;
+  color: #0f0;
+  font-size: 0.75rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Class for when loading is complete to fade out the loader */
+.loading-screen.complete {
+  opacity: 0;
+  pointer-events: none;
+}
