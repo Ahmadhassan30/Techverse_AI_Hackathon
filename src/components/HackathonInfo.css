@@ -1,0 +1,259 @@
+.hackathon-3day-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    perspective: 1000px;
+  }
+  
+  .hackathon-day-card {
+    background: linear-gradient(120deg, #111 70%, #00ff6615 100%);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 32px #00ff6611;
+    padding: 2rem 1.5rem;
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border: 1.5px solid #00ff66;
+    position: relative;
+    overflow: visible;
+    backdrop-filter: blur(8px);
+    transform-style: preserve-3d;
+  }
+  
+  .hackathon-day-card:hover {
+    box-shadow: 0 12px 48px #00ff6644;
+    transform: translateY(-8px) scale(1.03);
+  }
+  
+  .hackathon-day-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ff6630, #121212, #00ff6630, #121212);
+    background-size: 400% 400%;
+    z-index: -1;
+    border-radius: 1.6rem;
+    animation: borderGradient 8s ease infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .hackathon-day-card:hover::before {
+    opacity: 1;
+  }
+  
+  .hackathon-day-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, #00ff6622 1px, transparent 1px),
+                      radial-gradient(circle, #00ff6611 1px, transparent 1px);
+    background-size: 20px 20px, 40px 40px;
+    background-position: 0 0, 10px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    animation: particleFloat 20s linear infinite;
+  }
+  
+  .hackathon-day-card:hover::after {
+    opacity: 0.4;
+  }
+  
+  .hackathon-day-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #00ff66;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.03em;
+    position: relative;
+  }
+  
+  .hackathon-day-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00ff66, transparent);
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .hackathon-day-card:hover .hackathon-day-title::after {
+    width: 100%;
+  }
+  
+  .hackathon-day-date {
+    font-size: 1.1rem;
+    color: #fff;
+    opacity: 0.85;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    transition: padding-left 0.3s ease;
+  }
+  
+  .hackathon-day-card:hover .hackathon-day-date {
+    padding-left: 12px;
+  }
+  
+  .hackathon-day-schedule {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .hackathon-day-schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #222;
+    font-size: 1.05rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    word-wrap: break-word;
+    flex-wrap: wrap;
+  }
+  
+  .hackathon-day-schedule-item:hover {
+    transform: translateX(8px);
+    opacity: 1;
+    border-bottom-color: #00ff6655;
+    background: linear-gradient(90deg, rgba(0, 255, 102, 0.08), transparent);
+  }
+  
+  .hackathon-day-schedule-item:last-child {
+    border-bottom: none;
+  }
+  
+  .schedule-time {
+    color: #00ff66;
+    font-weight: 700;
+    min-width: 90px;
+    font-size: 1.05rem;
+    position: relative;
+  }
+  
+  .hackathon-day-schedule-item:hover .schedule-time {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px #00ff66aa, 0 0 15px #00ff6677;
+    color: #00ff99;
+  }
+  
+  .schedule-time::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #00ff66;
+    border-radius: 50%;
+    transform: translateY(-50%) scale(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .hackathon-day-schedule-item:hover .schedule-time::before {
+    transform: translateY(-50%) scale(1);
+  }
+  
+  .schedule-event {
+    color: #fff;
+    opacity: 0.9;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+  }
+  
+  .hackathon-day-schedule-item:hover .schedule-event {
+    opacity: 1;
+  }
+  
+  .hackathon-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    letter-spacing: 1px;
+  }
+  
+  .neon-glow {
+    text-shadow: 0 0 10px #00ff6644, 0 0 20px #00ff6622, 0 0 30px #00ff6611;
+    animation: textPulse 4s ease-in-out infinite;
+  }
+  
+  .card-cursor {
+    position: absolute;
+    pointer-events: none;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(0, 255, 102, 0.4) 0%, rgba(0, 255, 102, 0.2) 40%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    mix-blend-mode: screen;
+    filter: blur(8px);
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.6);
+  }
+  
+  .hackathon-day-card:hover .card-cursor {
+    opacity: 1;
+  }
+  
+  @keyframes borderGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes particleFloat {
+    0% { background-position: 0 0, 10px 10px; }
+    100% { background-position: 100px 100px, 110px 110px; }
+  }
+  
+  @keyframes textPulse {
+    0% { text-shadow: 0 0 10px #00ff6644, 0 0 20px #00ff6622, 0 0 30px #00ff6611; }
+    50% { text-shadow: 0 0 15px #00ff6666, 0 0 25px #00ff6644, 0 0 35px #00ff6622; }
+    100% { text-shadow: 0 0 10px #00ff6644, 0 0 20px #00ff6622, 0 0 30px #00ff6611; }
+  }
+  
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hackathon-3day-grid {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+  
+    .hackathon-day-card {
+      width: 100%;
+      max-width: 95vw;
+      padding: 1.5rem;
+    }
+  
+    .hackathon-day-schedule-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .schedule-time {
+      margin-bottom: 0.2rem;
+    }
+  }
+  

@@ -1,0 +1,78 @@
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-text {
+  font-family: 'Montserrat Black', 'Inter Black', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-text.transitioning {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.carousel-text .highlight {
+  color: #00ff66; /* Emerald green */
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+
+/* Add subtle underline effect for green words */
+.carousel-text .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #00ff6644; /* Subtle green underline */
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.6s ease-out;
+}
+
+.carousel-text:not(.transitioning) .highlight::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* Additional style for more emphasis on specific words */
+.carousel-text .highlight.emphasis {
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-text {
+    font-size: 1.5rem;
+  }
+}
+  /* Custom header styling */
+  .custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    position: relative;
+    z-index: 100;
+  }
