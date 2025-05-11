@@ -10,12 +10,13 @@ const LoadingScreen = ({ onLoadComplete, model3DProgress = 0 }) => {
   const [engagementMessage, setEngagementMessage] = useState('');
   
   const loadingTexts = [
-    'INITIALIZING AI SYSTEMS',
+    'ACCESSING HACKATHON INTERFACE',
+    'PREPARING 3D ENVIRONMENT',
     'CONNECTING TO NEURAL NETWORKS',
     'LOADING MACHINE LEARNING MODULES',
     'CALIBRATING AI ALGORITHMS',
-    'PREPARING 3D ENVIRONMENT',
-    'ACCESSING HACKATHON INTERFACE'
+    
+    
   ];
   
   const engagementMessages = [
