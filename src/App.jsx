@@ -96,9 +96,7 @@ const App = () => {
         <Partner />
       </div>
      
-      <div>
-        <Footer />
-      </div>
+      
     </>
   );
 };
