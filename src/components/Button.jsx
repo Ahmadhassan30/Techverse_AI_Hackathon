@@ -5,14 +5,14 @@ const ThemedButtons = () => {
   return (
     <div className="themed-buttons-container">
       <a
-        href="../public/RuleBook.pdf"
+        href="/RuleBook.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="themed-btn"
       >
         View Rulebook
       </a>
-     
+
       <a
         href="https://registeration.umttechverse.com/"
         target="_blank"
@@ -21,8 +21,6 @@ const ThemedButtons = () => {
       >
         Register Now
       </a>
-     
-
     </div>
   );
 };
