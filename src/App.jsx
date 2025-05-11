@@ -9,7 +9,7 @@ import Header from './components/Header';
 import Module from './components/Module';
 import Partner from './components/Partner';                               
 import Carousel from './components/Carousel';   
-
+import Footer from './components/Footer';
 // Animated stars component
 const AnimatedStars = () => {
   const starsRef = useRef();
@@ -96,7 +96,9 @@ const App = () => {
         <Partner />
       </div>
      
-      
+      <div>
+        <Footer />
+      </div>
     </>
   );
 };
