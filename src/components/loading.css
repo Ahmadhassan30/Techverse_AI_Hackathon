@@ -1,4 +1,7 @@
 /* src/components/LoadingScreen.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 .loading-screen {
   position: fixed;
   top: 0;
@@ -10,7 +13,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: monospace;
+  font-family: 'Fira Code', monospace;
   z-index: 9999;
   transition: opacity 0.5s ease-out;
 }
@@ -94,10 +97,11 @@
 .terminal-text {
   color: #0f0;
   font-size: 0.75rem;
-  line-height: 1.2;
+  line-height: 1.3;
   margin: 0;
   white-space: pre-wrap;
   word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .cursor-blink {
@@ -173,67 +177,64 @@
   padding: 0 1rem;
 }
 
-/* Class for when loading is complete to fade out the loader */
+/* Fade out on complete */
 .loading-screen.complete {
   opacity: 0;
   pointer-events: none;
 }
 
-/* Responsive design for mobile */
+/* ======== Responsive Design ======== */
+
 @media (max-width: 767px) {
   .loading-container {
-    padding: 1rem;
+    padding: 0.75rem;
+    width: 95%;
   }
-  
+
   .loading-terminal {
-    height: 6rem;
+    height: 5rem;
+    padding: 0.5rem;
   }
-  
+
   .terminal-text {
     font-size: 0.7rem;
+    line-height: 1.2;
   }
-  
-  .loading-header {
-    font-size: 0.8rem;
-  }
-  
-  .loading-footer {
-    font-size: 0.7rem;
-    margin-top: 1rem;
-  }
-  
+
+  .loading-header,
+  .loading-footer,
+  .engagement-message,
   .progress-info {
     font-size: 0.7rem;
   }
-  
+
   .engagement-message {
-    font-size: 0.7rem;
     padding: 0 0.5rem;
+    line-height: 1.3;
   }
 }
 
-/* Small screens */
 @media (max-width: 374px) {
   .loading-container {
-    padding: 0.75rem;
+    padding: 0.5rem;
   }
-  
+
   .loading-terminal {
-    height: 5rem;
+    height: 4rem;
     padding: 0.25rem;
   }
-  
+
   .terminal-text {
     font-size: 0.65rem;
+    line-height: 1.2;
   }
 }
 
-/* For very small height screens */
 @media (max-height: 600px) {
   .loading-terminal {
     height: 4rem;
   }
-  
+
   .loading-footer {
     margin-top: 0.75rem;
   }
