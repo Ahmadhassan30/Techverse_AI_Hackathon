@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import './style.css';
 import { OrbitControls, Stars } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import Scene from './components/Scene';
+import Scene from './components/scene';
 import Button from './components/Button';
 import Header from './components/Header';
 import Module from './components/Module';
