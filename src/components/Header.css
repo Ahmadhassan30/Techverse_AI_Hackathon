@@ -1,82 +1,210 @@
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  
-  /* Logo + Brand name on the left */
-  .header-left {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-    pointer-events: auto;
-  }
-  
-  .logo {
-    height: 35px;
-    width: auto;
-    margin-right: 10px; /* Space between logo and text */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Logo + Brand name on the left */
+.header-left {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  pointer-events: auto;
+}
+
+.logo {
+  height: 35px;
+  width: auto;
+  margin-right: 10px; /* Space between logo and text */
+}
+
+.brand-name {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Text content on the right */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+  pointer-events: auto;
+  text-align: right;
+}
+
+.reimagine {
+  color: #00ff66;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.desc {
+  color: #fff;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+.university {
+  color: #00ff66;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 0.2em;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: row;
+    padding: 1rem;
   }
   
   .brand-name {
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-  
-  /* Text content on the right */
-  .header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-left: auto;
-    pointer-events: auto;
-    text-align: right;
-  }
-  
-  .reimagine {
-    color: #00ff66;
-    font-weight: 700;
     font-size: 1rem;
-    letter-spacing: 0.01em;
   }
   
-  .desc {
-    color: #fff;
-    font-weight: 400;
-    font-size: 0.9rem;
-    letter-spacing: 0.01em;
-  }
-  
+  .reimagine,
+  .desc,
   .university {
-    color: #00ff66;
-    font-weight: 700;
+    font-size: 0.75rem;
+  }
+  
+  .logo {
+    height: 28px;
+  }
+}
+
+.custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+/* Logo Section Layout */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Button Styling Only */
+.view-results-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+background: linear-gradient(135deg, #ff416c, #ff4b2b); /* reddish-pink gradient */
+color: #ffffff; /* bright white text */
+padding: 12px 28px;
+border: none;
+border-radius: 12px;
+font-family: 'JetBrains Mono', 'Courier New', monospace;
+font-size: 16px;
+text-transform: uppercase;
+letter-spacing: 1.2px;
+box-shadow: 0 0 12px rgba(255, 65, 108, 0.5);
+transition: 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  text-decoration: none;
+  outline: none;
+}
+
+.view-results-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.view-results-btn:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  box-shadow: 0 0 18px rgba(255, 75, 43, 0.7), 0 0 32px rgba(255, 75, 43, 0.3);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.view-results-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+.btn-text {
+  position: relative;
+  z-index: 2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.btn-icon {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.view-results-btn:hover .btn-icon {
+  transform: translate(2px, -2px);
+}
+
+/* Responsive Button Styles */
+@media (max-width: 1024px) {
+  .view-results-btn {
+    padding: 0.7rem 1.3rem;
     font-size: 0.9rem;
-    margin-top: 0.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-section {
+    align-items: center;
   }
   
-  /* Responsive styling */
-  @media (max-width: 600px) {
-    .header-container {
-      flex-direction: row;
-      padding: 1rem;
-    }
-  
-    .brand-name {
-      font-size: 1rem;
-    }
-  
-    .reimagine,
-    .desc,
-    .university {
-      font-size: 0.75rem;
-    }
-  
-    .logo {
-      height: 28px;
-    }
+  .view-results-btn {
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .view-results-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    gap: 0.4rem;
   }
   
+  .btn-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .view-results-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}

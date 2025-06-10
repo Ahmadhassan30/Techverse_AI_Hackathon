@@ -11,7 +11,9 @@ import Partner from './components/Partner';
 import Carousel from './components/Carousel';    
 import Footer from './components/footer';
 import LoadingScreen from './components/loading';
+ 
 import './components/loading.css';
+
 
 // Animated stars component
 const AnimatedStars = () => {
@@ -135,10 +137,14 @@ const App = () => {
               zIndex: 200
             }}>
               <Button />
+             
             </div>
           </div>
+           
+          
 
           {/* Module Section BELOW the Canvas */}
+          
           <div className="module-section" >
             <Carousel />
           </div>
